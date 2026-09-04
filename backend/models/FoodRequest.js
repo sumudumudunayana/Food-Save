@@ -2,6 +2,18 @@ const mongoose = require("mongoose");
 
 const foodRequestSchema = new mongoose.Schema(
   {
+    // These identifiers are optional so existing requests created before the
+    // ownership fields were introduced remain readable.
+    businessId: {
+      type: String,
+      trim: true,
+    },
+
+    foodListingId: {
+      type: String,
+      trim: true,
+    },
+
     foodName: {
       type: String,
       required: true,
